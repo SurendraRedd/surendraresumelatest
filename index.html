@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Surendra Reddy - Resume
+    </title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown-light.min.css"
+        integrity="sha512-Pmhg2i/F7+5+7SsdoUqKeH7UAZoVMYb1sxGOoJ0jWXAEHP0XV2H4CITyK267eHWp2jpj7rtqWNkmEOw1tNyYpg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.12/dist/katex.min.css" integrity="sha384-PDbUeNCuE6bOPudPOgFyIUEy3UJawJVwr3XlGO90FIuf5qNIoTLSgOJo/dC2ZXV/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.12/dist/katex.min.js" integrity="sha384-VkqWq8xtm5YQk1BBXczQ8/Sx+DlCzF8cuS43bZwmtVXzRFtyLTqTCdP7MKmKo+KN" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.12/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, {delimiters: [{ left: '$$',  right: '$$',  display: false }]});"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+
+        .markdown-body h1 i {
+            margin-right: 10px;
+            color: #0366d6;
+        }
+
+        .markdown-body h2 i {
+            margin-right: 8px;
+            color: #0366d6;
+        }
+
+        .markdown-body li i {
+            margin-right: 8px;
+            color: #586069;
+            width: 20px;
+            text-align: center;
+        }
+
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #0366d6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(3, 102, 214, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 1000;
+        }
+
+        .download-btn:hover {
+            background-color: #0256c7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(3, 102, 214, 0.4);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        .download-btn i {
+            font-size: 16px;
+        }
+
+        @media print {
+            .download-btn {
+                display: none;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .download-btn {
+                top: 10px;
+                right: 10px;
+                padding: 10px 16px;
+                font-size: 12px;
+            }
+        }
+
+        /* PDF-specific styling */
+        @media print {
+            .markdown-body {
+                max-width: 100%;
+                padding: 20px;
+            }
+            
+            h1, h2 {
+                page-break-after: avoid;
+            }
+            
+            ul {
+                page-break-inside: avoid;
+            }
+            
+            li {
+                page-break-inside: avoid;
+            }
+        }
+
+        .pdf-page-break {
+            page-break-before: always;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="download-btn" onclick="downloadPDF()">
+        <i class="fas fa-file-pdf"></i>
+        Download PDF
+    </button>
+    <article class="markdown-body" id="resume-content">
+        <h1><i class="fas fa-id-badge"></i> Surendra Reddy - Resume</h1>        
+        <li><i class="fas fa-phone"></i> Phone: +91 99164 29983</li>
+        <li><i class="fas fa-envelope"></i> Email: <a href="mailto:surendraelectronics@gmail.com">surendraelectronics@gmail.com</a></li>
+        <li><i class="fas fa-map-marker-alt"></i> Location: Bangalore, India</li>
+        <li><i class="fas fa-globe"></i> Website: <a href="https://surendraresume.netlify.app/">surendraresume.netlify.app</a></li>
+        <li><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/https://www.linkedin.com/in/surendra-reddy-55208948/">https://www.linkedin.com/in/surendra-reddy-55208948/</a></li>
+        <li><i class="fab fa-github"></i> GitHub: <a href="https://github.com/https://github.com/SurendraRedd">https://github.com/SurendraRedd</a></li>
+        </ul>
+        <h1><i class="fas fa-bullseye"></i> Objective</h1>
+        <p>1) <strong>Cloud/DevOps Architect and Data Architect</strong> with <strong>18+ years</strong> of expertise in <strong>AWS, Azure, and multi-cloud</strong> ecosystems, leveraging generative AI tools (<strong>GitHub Copilot, Microsoft Copilot for Azure, Grok, ChatGPT, Claude</strong>) to accelerate solution design, code generation, and architectural decision-making. Seeking a strategic role to design and implement scalable, secure, cost-optimized, AI-enhanced cloud and data solutions.</p>
+        <p>2) Proven track record in end-to-end cloud migrations, Infrastructure as Code (<strong>Terraform, CloudFormation, Pulumi, ARM, Bicep</strong>), DevOps automation (<strong>CI/CD with GitHub Actions, GitLab, Azure DevOps</strong>), and container orchestration (<strong>Kubernetes on EKS, AKS, OpenShift</strong>). Expert in architecting modern data platforms using <strong>Databricks, EMR, Glue, Kafka, and Kinesis</strong> for real-time and batch processing, leveraging AI assistants for rapid prototyping, debugging, and performance tuning.</p>
+        <p>3) Skilled at leading cross-functional teams, driving observability (<strong>Prometheus, Grafana, ELK</strong>), and delivering cloud-native, data-driven architectures aligned with business goals. <strong>5+ years</strong> as Azure Data Engineer designing scalable data pipelines using <strong>Azure Data Factory (ADF)</strong> and <strong>Synapse Analytics</strong>, proficient in <strong>ETL/ELT</strong> processes, multi-source data ingestion, data modeling, and seamless integration of on-premises and cloud systems for advanced analytics.</p>
+        <h1><i class="fas fa-user"></i> Profile Summary</h1>
+        <p>1) <strong>18+ years</strong> of experience in Cloud Architecture, DevOps, and Data Engineering across Healthcare, Finance, E-commerce, and Technology industries.</p>
+        <p>2) Expert in <strong>AWS and Azure</strong> cloud platforms with strong focus on Infrastructure as Code (<strong>IaC</strong>) using <strong>Terraform, CloudFormation, Pulumi, ARM, and Bicep</strong>.</p>
+        <p>3) Proficient in <strong>DevOps practices</strong> and <strong>CI/CD</strong> pipeline development using <strong>GitHub Actions, GitLab CI, and Azure DevOps</strong>.</p>
+        <p>4) Skilled in containerization and orchestration with <strong>Docker and Kubernetes</strong> (<strong>EKS, AKS, OpenShift</strong>).</p>
+        <p>5) Extensive experience designing and implementing modern data platforms using <strong>Databricks, EMR, Glue, Kafka, and Kinesis</strong> for real-time and batch data processing.</p>
+        <p>6) Expert in monitoring and observability tools- <strong>Prometheus, Grafana, and ELK stack</strong>.</p>
+        <p>7) Proven leader of cross-functional teams managing complex cloud migration projects.</p>
+        <p>8) Leverages generative AI tools (<strong>GitHub Copilot, Microsoft Copilot for Azure, Grok, ChatGPT, Claude</strong>) to enhance solution design, code generation, pipeline optimization, and architectural decision-making.</p>
+        <h1><i class="fas fa-graduation-cap"></i> Education</h1>
+        <h2><i class="fas fa-university"></i> JNTU University, B.Tech in Electronics and Communication Engineering</h2>
+        <ul>
+        <li><i class="far fa-calendar-alt"></i> May 2002 – May 2006</li>
+        <li><i class="fas fa-map-marker-alt"></i> Nellore, India</li>
+        </ul>
+        <h1><i class="fas fa-briefcase"></i> Experience</h1>
+        <h2><i class="fas fa-building"></i> Koerber Pharma, Cloud/DevOps Architect</h2>
+        <ul>
+        <li><i class="far fa-calendar-alt"></i> Nov 2022 – present</li>
+        <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+        <li>Designed and deployed <strong>PAS-X MES application</strong> on <strong>AWS, Azure, OpenShift, and OpenStack</strong> using hub-spoke architecture and landing zones.</li>
+        <li>Prepared Azure architecture blueprints and documentation for cloud services (compute, storage, networking, databases, identity, security).</li>
+        <li>Provisioned infrastructure using <strong>Pulumi and Terraform</strong> for <strong>Kubernetes (AKS/EKS)</strong>, NGINX ingress, Cert-Manager, and observability stacks (Prometheus, Grafana, ELK).</li>
+        <li>Automated deployments via <strong>Azure Pipelines and GitHub Actions</strong>, reducing deployment time by <strong>40%</strong>.</li>
+        <li>Implemented auto-scaling policies and Automation Runbooks, reducing cloud costs by <strong>25%</strong>.</li>
+        <li>Built data pipelines on <strong>Azure/AWS Databricks</strong> integrated with <strong>S3, Redshift, and Power BI</strong> for business intelligence.</li>
+        <li>Enforced <strong>Azure Security Center and AWS Guard Duty</strong> for threat detection, WAF, and private endpoints.</li>
+        <li>Integrated <strong>Kafka-based messaging</strong> for high-throughput, fault-tolerant, real-time event processing.</li>
+        <li>Implemented <strong>Prometheus and Grafana</strong> for infrastructure and application monitoring with real-time alerting and dashboarding.</li>
+        <li>Deployed and managed <strong>MongoDB databases</strong> for highly available, distributed, scalable data storage.</li>
+        <li>Led team of cloud architects, engineers, support, and testing teams, providing strategic direction, task delegation, and mentorship.</li>
+        <li>Developed training programs and best practice guides to upskill engineers in DevOps tooling, monitoring, and cloud-native architectures.</li>
+        <li>Designed data pipelines in <strong>Azure Data Factory</strong> to ETL data from on-prem SQL Server and APIs into Azure Data Lake.</li>
+        <li>Implemented ADF data flow transformations for data cleansing, mapping, and aggregation.</li>
+        <li>Integrated ADF with <strong>Azure Synapse Analytics</strong> for data analytics and Power BI reporting.</li>
+        <li>Automated pipeline triggers using Event-based and Schedule triggers.</li>
+        <li>Built parameterized pipelines and reusable templates to optimize development time.</li>
+        <li>Implemented logging and monitoring using <strong>Azure Monitor and Log Analytics</strong>.</li>
+        <li>Collaborated with DevOps team to implement CI/CD pipelines for ADF using Azure DevOps.</li>
+        <li>Reduced manual ETL effort by <strong>30%</strong> and improved data refresh performance by <strong>25%</strong>.</li>
+        </ul>
+        <h2><i class="fas fa-building"></i> Tech Mahindra, Cloud/DevOps Architect</h2>
+        <ul>
+        <li><i class="far fa-calendar-alt"></i> Sept 2022 – Oct 2022</li>
+        <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+        <li>Led migration of <strong>200+ workloads</strong> from <strong>AWS to Azure</strong> using <strong>Terraform and Azure Migrate</strong> with zero downtime.</li>
+        <li>Designed and implemented scalable, reliable systems, automated operational tasks using <strong>IaaC and CI/CD tools</strong>, monitored performance with observability platforms, led incident response and post-mortems.</li>
+        <li>Prepared Azure architecture blueprints and documentation for cloud services (compute, storage, networking, databases, identity, security).</li>
+        <li>Developed cloud adoption and migration strategies (lift-and-shift, re-platforming).</li>
+        <li>Created <strong>SLA, SLO, and SRE Matrix Index</strong> for applications.</li>
+        <li>Defined <strong>Reliability Index</strong> criteria (availability, performance, resilience, consistency) and <strong>Observability Index</strong> criteria (metrics, logs, traces, dashboards).</li>
+        <li>Designed <strong>CI/CD pipelines</strong> in <strong>Azure DevOps</strong> for <strong>AKS deployments</strong> and Terraform state management.</li>
+        <li>Implemented <strong>Ansible</strong> for configuration management of Linux/Windows nodes.</li>
+        <li>Managed <strong>AKS clusters</strong> using Lens/Kubectl with Terraform automation for cluster provisioning.</li>
+        <li>Developed <strong>Azure Data Factory pipelines</strong> for data ingestion into <strong>Databricks and Synapse</strong>.</li>
+        <li>Architected applications in <strong>Microsoft Azure</strong> using <strong>hub-and-spoke architecture</strong>.</li>
+        <li>Designed and implemented data pipelines and big data processing solutions on <strong>AWS Databricks</strong> for large-scale data analytics.</li>
+        <li>Developed <strong>IaC using Terraform</strong> to automate deployment of Databricks clusters, VPCs, security groups, and AWS infrastructure.</li>
+        <li>Created scalable, resilient, secure cloud solutions aligned with best practices and <strong>Well-Architected Framework</strong>.</li>
+        <li>Designed cloud infrastructure architecture <strong>(IaaS, PaaS, SaaS)</strong> and managed end-to-end implementation using <strong>IaaC (CloudFormation, ARM, Terraform)</strong>.</li>
+        <li>Delivered cloud projects achieving cost savings and performance improvements through migrations and infrastructure optimizations.</li>
+        </ul>
+        <h1><i class="fas fa-tools"></i> Skills</h1>
+        <ul>
+        <li><i class="fas fa-cloud"></i> Cloud Platforms: AWS, Azure, OpenStack, GCP</li>
+        <li><i class="fas fa-code"></i> Infrastructure as Code: Terraform, CloudFormation, Pulumi, ARM Templates, Bicep</li>
+        <li><i class="fas fa-cubes"></i> Container Orchestration: Kubernetes (AKS, EKS, OpenShift), Docker, ECS, Fargate</li>
+        <li><i class="fas fa-cogs"></i> CI/CD &amp; DevOps: GitHub Actions, Azure DevOps, GitLab CI, Jenkins, Bitbucket Pipelines, Apache Airflow</li>
+        <li><i class="fas fa-shield-alt"></i> Cloud Networking &amp; Security: VPC, VNet, Transit Gateway, Route53, Security Groups, IAM, Azure AD, Azure Security Centre, AWS GuardDuty, WAF, Private Endpoints</li>
+        <li><i class="fas fa-database"></i> Data Platforms &amp; Analytics: Databricks, Azure Data Factory, Synapse Analytics, AWS Glue, EMR, Kinesis, Snowflake, ADLS Gen2, Redshift, S3, Power BI, Tableau</li>
+        <li><i class="fas fa-server"></i> Databases: PostgreSQL, SQL Server, Oracle, MongoDB, SQLite</li>
+        <li><i class="fas fa-chart-line"></i> Monitoring &amp; Observability: Prometheus, Grafana, ELK Stack, DataDog, Splunk, Azure Monitor, CloudWatch</li>
+        <li><i class="fas fa-terminal"></i> Programming &amp; Scripting: Python, Shell, PowerShell, Go, Java</li>
+        <li><i class="fas fa-robot"></i> Generative AI Tools: GitHub Copilot, Microsoft Copilot, ChatGPT, Claude, Grok, Amazon Q</li>
+        <li><i class="fas fa-vial"></i> Testing &amp; Quality: Pytest, Selenium, JMeter, Locust, Robot Framework, REST API Testing, Playwright</li>
+        <li><i class="fab fa-git-alt"></i> Version Control &amp; Collaboration: Git, GitHub, GitLab, Bitbucket, Azure Repos, JIRA</li>
+        </ul>
+        <h1><i class="fas fa-project-diagram"></i> Projects</h1>
+        <h2><i class="fas fa-building"></i> Koerber Pharma Pvt Ltd</h2>
+        <ul>
+        <li>Designed <strong>multi-cloud SaaS architecture</strong> (Azure/AWS/OpenStack) using <strong>hub-and-spoke network models, Azure landing zones, and AWS multi-account architectures</strong> for PAS-X MES v3.3.3-3.4.0.</li>
+        <li>Provisioned infrastructure using <strong>Pulumi/Terraform</strong> for <strong>Kubernetes (AKS/EKS/MicroK8s)</strong>, NGINX ingress, Cert-Manager, OAuth2 Proxy, and observability stacks.</li>
+        <li>Implemented <strong>end-to-end CI/CD</strong> using <strong>Azure Pipelines and GitHub Actions</strong>, automating deployments and reducing release time.</li>
+        <li>Deployed <strong>observability stack</strong> (<strong>Prometheus, Grafana, ELK, Fluent Bit</strong>) for infrastructure and application monitoring.</li>
+        <li>Managed MES system <strong>upgrades (3.3.4→3.3.5→3.4.0)</strong>, installations, and patches across cloud environments.</li>
+        <li>Configured <strong>MBR/EBR workflows</strong>, printer services, <strong>ERP integrations</strong>, and Scale Simulator setups for customer environments.</li>
+        <li>Built <strong>test automation framework</strong> using <strong>Robot Framework, Playwright, Selenium, Sikuli</strong>, integrated into CI/CD pipelines.</li>
+        <li>Automated <strong>REST API testing</strong> using <strong>Postman, Newman, Bruno</strong> with CI/CD integration.</li>
+        <li>Designed <strong>Azure Data Factory pipelines</strong> for ETL from on-prem SQL Server/APIs into <strong>Azure Data Lake and Synapse Analytics</strong>.</li>
+        <li>Integrated ADF with <strong>Power BI</strong> for reporting, using event-based/scheduled triggers and parameterized templates.</li>
+        <li>Achieved <strong>30% reduction in manual ETL effort</strong> and <strong>25% improvement in data refresh performance</strong> through optimized ADF pipelines.</li>
+        <li>Implemented cost optimization through <strong>Azure Automation runbooks</strong> for resource scheduling.</li>
+        <li>Leveraged <strong>GitHub Copilot and Microsoft Copilot</strong> to accelerate <strong>IaC development</strong>, reducing provisioning time by <strong>30-40%</strong>.</li>
+        <li>Utilized <strong>generative AI tools (ChatGPT/Grok/Claude)</strong> for debugging <strong>Kubernetes manifests, CI/CD pipelines, and Databricks notebooks</strong>.</li>
+        <li>Mentored team on adopting <strong>AI-assisted development</strong> for code reviews, architecture design, and automated documentation.</li>
+        </ul>
+        <h2><i class="fas fa-building"></i> Tech Mahindra</h2>
+        <ul>
+        <li>Led <strong>AWS to Azure migration</strong> of 200+ workloads using <strong>Azure Migrate Service</strong>, ensuring zero downtime and adherence to <strong>Azure landing zone</strong> architecture.</li>
+        <li>Generated <strong>Azure Resource Inventory</strong> (subscriptions, management groups, resource groups) using <strong>PowerShell and Azure CLI</strong> for governance and compliance.</li>
+        <li>Conducted <strong>cloud assessment reviews</strong> and created <strong>landing zones</strong> in Azure for standardized resource deployment.</li>
+        <li>Provisioned Azure resources (<strong>VMs, AKS, Load Balancers, VNets</strong>) using <strong>Azure Portal, Azure CLI, and Terraform</strong> for IaC automation.</li>
+        <li>Managed <strong>AKS clusters</strong> using <strong>Lens and kubectl</strong>, implementing monitoring and maintenance strategies.</li>
+        <li>Developed <strong>Azure Policy as Code</strong> using <strong>GitHub Actions and Terraform</strong>, enforcing compliance across subscriptions.</li>
+        <li>Created <strong>Azure Workbooks and Azure Monitor dashboards</strong> for infrastructure management and performance monitoring using <strong>KQL (Kusto Query Language)</strong>.</li>
+        <li>Implemented <strong>Application Insights</strong> for Python and .NET applications using SDK integration for telemetry and diagnostics.</li>
+        <li>Developed <strong>test automation frameworks</strong> using <strong>Pytest, Robot Framework, Selenium, Playwright, and Sikuli</strong>, integrated into CI/CD pipelines.</li>
+        <li>Built <strong>CI/CD pipelines</strong> using <strong>Azure DevOps</strong> and <strong>Jenkins</strong>, automating build, test, and deployment processes.</li>
+        <li>Configured <strong>Azure Data Factory and Databricks</strong> for data integration and analytics workloads, troubleshooting performance issues.</li>
+        <li>Architected and deployed <strong>AWS resources (EC2, VPC, S3)</strong> using <strong>Terraform and CloudFormation</strong> before migration.</li>
+        <li>Managed <strong>Terraform Cloud workspace</strong> for centralized state file management and collaboration.</li>
+        <li>Conducted <strong>REST API testing</strong> using <strong>Postman and Application Insights REST API</strong> for validation.</li>
+        <li>Facilitated <strong>client meetings</strong> and <strong>KPI reporting</strong>, providing knowledge transfer to new team members.</li>
+        <li>Mentored team on <strong>GitHub Copilot and Microsoft Copilot</strong> for accelerated code reviews and Azure architecture design.</li>
+        <li>Utilized <strong>LLMs (ChatGPT, Grok, Copilot)</strong> for solution architecture brainstorming, cost optimization runbooks, and automated documentation.</li>
+        </ul>
+        <h2><i class="fas fa-building"></i> Mercedes Benz</h2>
+        <ul>
+        <li>Served as <strong>Product Owner</strong> for ADAS Park Assist tools, aligning with <strong>ISO 26262</strong> (Parts 3-8) functional safety standards.</li>
+        <li>Developed <strong>REST API application (IDC SIM Service Tool)</strong> using <strong>Flask-RESTPlus, Swagger</strong> for API documentation and <strong>Docker</strong> deployment on Linux.</li>
+        <li>Built <strong>Streamlit web applications</strong> for Parken automation tools and deployed to <strong>Azure</strong> using <strong>CI/CD pipelines (Jenkins)</strong>.</li>
+        <li>Created <strong>test automation frameworks</strong> using <strong>Robot Framework, Playwright, Selenium, Sikuli</strong>, integrated into CI/CD pipelines.</li>
+        <li>Performed <strong>performance testing</strong> using <strong>Locust</strong> for Python web applications with distributed execution and GUI/CLI modes.</li>
+        <li>Led <strong>Functional Safety management</strong> activities including <strong>HARA, FMEA, FTA, DFMEA</strong> creation, FSR/TSR identification, and FSC/TSC development.</li>
+        <li>Developed <strong>DOORS DXL Extensions</strong> for automation, requirements gathering, and <strong>DOORS-to-JIRA integration</strong> using Agosense BPL scripting.</li>
+        <li>Built <strong>Python automation tools</strong> for diagnostic log parsing, SAR test automation, FMVSS automation, and EOL test automation using <strong>JSON, Gooey, OpenPyXL</strong>.</li>
+        <li>Developed <strong>video parser tool</strong> using <strong>OpenCV and Gooey</strong> for test analysis.</li>
+        <li>Deployed <strong>Jenkins on AWS EC2</strong> and created <strong>scripted/distributed CI/CD pipelines</strong> with <strong>Artifactory, Git, Ansible, ELK, Docker, S3, CodeBuild, CodeDeploy, CodePipeline, SonarQube</strong>.</li>
+        <li>Managed <strong>AWS services</strong> (EC2, S3, CloudWatch) and <strong>Kubernetes</strong> for microservices deployments.</li>
+        <li>Implemented <strong>monitoring solutions</strong> using <strong>Prometheus, Grafana, ELK, DataDog, Splunk</strong> for application and infrastructure observability.</li>
+        <li>Configured <strong>Infrastructure as Code</strong> using <strong>Terraform</strong> for AWS CodeBuild, CodeDeploy, and CodePipeline automation.</li>
+        <li>Managed <strong>branching, merging, tagging</strong> strategies in <strong>Git, GitHub, GitLab, SVN</strong> with extensive CI/CD experience across multiple platforms.</li>
+        <li>Led development team, provided training on <strong>IBM Rational DOORS and DXL scripting</strong>, and defined QA/configuration management processes.</li>
+        </ul>
+        <h2><i class="fas fa-building"></i> Honeywell Technologies</h2>
+        <ul>
+        <li>Led <strong>test automation</strong> for Embraer E2 OMS software (MIS-RT, ATE ASCB, ATE CMCF, Wireless RT, DLMU-W) in target and simulated environments.</li>
+        <li>Developed <strong>test design automation tool</strong> to convert manual test cases to automated tests for ATE ASCB and ATE CMCF modules.</li>
+        <li>Created <strong>scenario-to-test script generation tools</strong> for MIS-RT, Wireless RT, and DLMU-W systems using Python.</li>
+        <li>Developed <strong>DXL scripts</strong> for DOORS automation (requirements extraction, object history tracking, module data export to Excel).</li>
+        <li>Automated <strong>build deployment process</strong> using batch scripts for bench environment configurations.</li>
+        <li>Performed <strong>requirements-based and structural coverage testing</strong> for Boeing 747-8 ATN and Boeing 787 FMS applications (<strong>Level B software</strong>).</li>
+        <li>Generated <strong>structural coverage reports</strong> and conducted SCR fixes identified during testing phases.</li>
+        <li>Participated in <strong>SOI-3 audit</strong> for Boeing 747-8 Data Link ATS Core program.</li>
+        <li>Built <strong>test automation frameworks</strong> using <strong>Robot Framework, Playwright, Selenium, Sikuli</strong>, integrated into CI/CD pipelines.</li>
+        <li>Acted as <strong>module focal</strong> for MIS RT, MIS Core, ATE ASCB, ATE CMCF, Wireless RT, DLMU-W, mentoring new team members.</li>
+        </ul>
+        <h2><i class="fas fa-building"></i> Silver Atena</h2>
+        <ul>
+        <li>Developed <strong>test cases, procedures, and scripts</strong> using <strong>RTRT Tool</strong> for TaxiBot Localization Module per high-level software requirements.</li>
+        <li>Performed <strong>requirements-based testing</strong> for <strong>RSE-10 software</strong> (<strong>Level B</strong>) in <strong>Microsoft Visual C# 2010</strong> environment, fixing code SCRs.</li>
+        <li>Developed <strong>manual test cases and REST API test scripts</strong> (PUT, POST, GET, DELETE) for <strong>DAC LUC</strong> (Direct Accumulation Count Life Usage Calculator).</li>
+        <li>Fixed <strong>database issues</strong> related to <strong>Oracle and SQL Server 2005</strong> for DAC LUC applications.</li>
+        <li>Developed <strong>Low-Level Design Requirements</strong> for <strong>PDU (Power Distribution Unit)</strong> Application, Boot, and STR Library.</li>
+        <li>Performed <strong>Design Verification Engineer</strong> role, reviewing system-level, high-level, and low-level requirements.</li>
+        <li>Managed <strong>requirements porting to DOORS</strong> and developed <strong>DXL scripts</strong> for automation and traceability.</li>
+        </ul>
+        <h1><i class="fas fa-certificate"></i> Certifications</h1>
+        <ul>
+        <li>Microsoft Azure Fundamentals (AZ-900)</li>
+        <li>Six Sigma Green Belt</li>
+        <li>SAFe and SAFe 5.0 DevOps</li>
+        <li>AWS Certified Cloud Practitioner</li>
+        <li>ITIL Foundation</li>
+        <li>ISO 26262 Functional Safety</li>
+        <li>ISTQB Certified Tester</li>
+        </ul>
+        <h1><i class="fas fa-trophy"></i> Awards</h1>
+        <ul>
+        <li>Silver Award, Spot Award, Gold Award, Outstanding Engineer, X-stream Award</li>
+        <li>Team Excellence, Bronze Award, Spotlight Award, Partner Awards</li>
+        <li>ABCD (Above and Beyond Call of Duty) Award</li>
+        <li>Shop Floor Recognitions</li>
+        </ul>
+    </article>
+
+    <script>
+        function downloadPDF() {
+            const button = document.querySelector('.download-btn');
+            const originalText = button.innerHTML;
+            
+            // Show loading state
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+            button.disabled = true;
+            
+            const element = document.getElementById('resume-content');
+            const opt = {
+                margin: [8, 8, 8, 8],
+                filename: 'Surendra_Reddy_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.95 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    letterRendering: true,
+                    logging: false,
+                    scrollY: 0,
+                    scrollX: 0,
+                    windowWidth: 1200
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait',
+                    compress: true
+                },
+                pagebreak: { 
+                    mode: ['avoid-all', 'css', 'legacy'],
+                    before: '.pdf-page-break',
+                    avoid: ['h1', 'h2', 'li', 'ul']
+                }
+            };
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Restore button state
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }).catch((error) => {
+                console.error('PDF generation error:', error);
+                button.innerHTML = originalText;
+                button.disabled = false;
+                alert('Error generating PDF. Please try again.');
+            });
+        }
+    </script>
+</body>
+
+</html>
