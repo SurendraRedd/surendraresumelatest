@@ -738,6 +738,14 @@
         </div>
     </header>
 
+    <!-- Voice Assistant Button -->
+    <div style="position:fixed; bottom:20px; right:100px; z-index:1000;">
+        <button id="voiceBtn" style="padding:15px; border-radius:50%; background:#007bff; color:white; border:none; font-size:20px; cursor:pointer; box-shadow:0 4px 16px rgba(0,123,255,0.4); transition:all 0.3s ease; width:60px; height:60px; display:flex; align-items:center; justify-content:center;" title="Voice Assistant">
+            🎤
+        </button>
+        <p id="status" style="color:white; background:rgba(0,0,0,0.7); padding:10px; border-radius:5px; margin-top:10px; display:none; font-size:12px; text-align:center; max-width:180px; position:absolute; bottom:70px; right:0;"></p>
+    </div>
+
     <article class="markdown-body" id="resume-content">
         <h1><i class="fas fa-id-badge"></i> Surendra Reddy - Resume</h1>
         <ul>
@@ -752,7 +760,7 @@
         <p>1) <strong>Cloud/DevOps Architect and Data Architect</strong> with <strong>18+ years</strong> of expertise in <strong>AWS, Azure, and multi-cloud</strong> ecosystems, leveraging generative AI tools (<strong>GitHub Copilot, Microsoft Copilot for Azure, Grok, ChatGPT, Claude</strong>) to accelerate solution design, code generation, and architectural decision-making. Seeking a strategic role to design and implement scalable, secure, cost-optimized, AI-enhanced cloud and data solutions.</p>
         <p>2) Proven track record in end-to-end cloud migrations, Infrastructure as Code (<strong>Terraform, CloudFormation, Pulumi, ARM, Bicep</strong>), DevOps automation (<strong>CI/CD with GitHub Actions, GitLab, Azure DevOps</strong>), and container orchestration (<strong>Kubernetes on EKS, AKS, OpenShift</strong>). Expert in architecting modern data platforms using <strong>Databricks, EMR, Glue, Kafka, and Kinesis</strong> for real-time and batch processing, leveraging AI assistants for rapid prototyping, debugging, and performance tuning.</p>
         <p>3) Skilled at leading cross-functional teams, driving observability (<strong>Prometheus, Grafana, ELK</strong>), and delivering cloud-native, data-driven architectures aligned with business goals. <strong>5+ years</strong> as Azure Data Engineer designing scalable data pipelines using <strong>Azure Data Factory (ADF)</strong> and <strong>Synapse Analytics</strong>, proficient in <strong>ETL/ELT</strong> processes, multi-source data ingestion, data modeling, and seamless integration of on-premises and cloud systems for advanced analytics.</p>
-        <h1><i class="fas fa-user"></i> Profile Summary</h1>
+        <h1 id="profile"><i class="fas fa-user"></i> Profile Summary</h1>
         <p>1) <strong>18+ years</strong> of experience in Cloud Architecture, DevOps, and Data Engineering across Healthcare, Finance, E-commerce, and Technology industries.</p>
         <p>2) Expert in <strong>AWS and Azure</strong> cloud platforms with strong focus on Infrastructure as Code (<strong>IaC</strong>) using <strong>Terraform, CloudFormation, Pulumi, ARM, and Bicep</strong>.</p>
         <p>3) Proficient in <strong>DevOps practices</strong> and <strong>CI/CD</strong> pipeline development using <strong>GitHub Actions, GitLab CI, and Azure DevOps</strong>.</p>
@@ -761,7 +769,7 @@
         <p>6) Expert in monitoring and observability tools- <strong>Prometheus, Grafana, and ELK stack</strong>.</p>
         <p>7) Proven leader of cross-functional teams managing complex cloud migration projects.</p>
         <p>8) Leverages generative AI tools (<strong>GitHub Copilot, Microsoft Copilot for Azure, Grok, ChatGPT, Claude</strong>) to enhance solution design, code generation, pipeline optimization, and architectural decision-making.</p>
-        <h1><i class="fas fa-graduation-cap"></i> Education</h1>
+        <h1 id="education"><i class="fas fa-graduation-cap"></i> Education</h1>
         <h2><i class="fas fa-university"></i> JNTU University, B.Tech in Electronics and Communication Engineering</h2>
         <ul>
         <li><i class="far fa-calendar-alt"></i> May 2002 – May 2006</li>
@@ -919,7 +927,7 @@
         <li>ISO 26262 Functional Safety</li>
         <li>ISTQB Certified Tester</li>
         </ul>
-        <h1><i class="fas fa-trophy"></i> Awards</h1>
+        <h1 id="awards"><i class="fas fa-trophy"></i> Awards</h1>
         <ul>
         <li>Silver Award, Spot Award, Gold Award, Outstanding Engineer, X-stream Award</li>
         <li>Team Excellence, Bronze Award, Spotlight Award, Partner Awards</li>
@@ -1523,6 +1531,83 @@
                 alert('Error generating PDF. Please try again.');
             });
         }
+    </script>
+
+    <script>
+        // Simple Voice Assistant - Speaks Resume Summary
+        const synth = window.speechSynthesis;
+        const status = document.getElementById('status');
+        const btn = document.getElementById('voiceBtn');
+        let speaking = false;
+
+        btn.addEventListener('click', () => {
+            if (speaking) {
+                // Stop speaking
+                synth.cancel();
+                btn.innerHTML = '🎤';
+                btn.style.background = '#007bff';
+                btn.title = 'Play Resume Summary';
+                status.textContent = 'Voice stopped';
+                status.style.display = 'block';
+                setTimeout(() => status.style.display = 'none', 2000);
+                speaking = false;
+            } else {
+                // Start speaking resume summary
+                btn.innerHTML = '🛑';
+                btn.style.background = '#dc3545';
+                btn.title = 'Stop Speaking';
+                status.textContent = 'Speaking...';
+                status.style.display = 'block';
+                speaking = true;
+
+                // Resume summary text
+                const resumeText = `
+                    Hello! I am Surendra Reddy's Voice assistant. I will help you learn about him.
+                    
+                    Experience: Surendra has 18 plus years of experience as a Cloud and DevOps Architect and Data Engineer. 
+                    He has worked across Aerospace, Automobile, Healthcare, Finance, E-commerce, and Technology industries.
+                    
+                    Current Company: He is currently working at Koerber Pharma as a Cloud and DevOps Architect since November 2022. 
+                    Previously, he worked at Tech Mahindra, Mercedes Benz, Honeywell Technologies, and Silver Atena.
+                    
+                    Skills: His expertise includes AWS, Azure, Google Cloud, Terraform, CloudFormation, Pulumi, 
+                    Kubernetes, Docker, E K S, A K S, OpenShift, GitHub Actions, Azure DevOps, 
+                    Databricks, Azure Data Factory, Synapse Analytics, Prometheus, Grafana, E L K Stack, 
+                    Python, PowerShell, and A I tools like GitHub Copilot, ChatGPT, Grok and Claude.
+                    
+                    Certifications: He holds Microsoft Azure Fundamentals A Z 900, AWS Certified Cloud Practitioner, 
+                    Six Sigma Green Belt, SAFe 5.0 DevOps, ITIL Foundation, ISO 26262 Functional Safety, 
+                    and I S T Q B Certified Tester certifications.
+                    
+                    Thank you for listening to Surendra Reddy's resume summary! Feel free to use the chatbot for more details.
+                `;
+
+                const utter = new SpeechSynthesisUtterance(resumeText);
+                utter.rate = 0.95; // Natural speed
+                utter.pitch = 1;
+                utter.volume = 1;
+
+                utter.onend = () => {
+                    btn.innerHTML = '🎤';
+                    btn.style.background = '#007bff';
+                    btn.title = 'Play Resume Summary';
+                    status.textContent = 'Summary complete';
+                    setTimeout(() => status.style.display = 'none', 2000);
+                    speaking = false;
+                };
+
+                utter.onerror = () => {
+                    btn.innerHTML = '🎤';
+                    btn.style.background = '#007bff';
+                    btn.title = 'Play Resume Summary';
+                    status.textContent = 'Error playing audio';
+                    setTimeout(() => status.style.display = 'none', 3000);
+                    speaking = false;
+                };
+
+                synth.speak(utter);
+            }
+        });
     </script>
 </body>
 
