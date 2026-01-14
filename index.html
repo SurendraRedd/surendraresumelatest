@@ -167,8 +167,8 @@
         }
 
         @media print {
-            .download-btn, .theme-toggle {
-                display: none;
+            .download-btn, .theme-toggle, .chat-toggle-btn, .chatbot-container, #voiceBtn, #status {
+                display: none !important;
             }
         }
 
@@ -195,21 +195,45 @@
 
         /* PDF-specific styling */
         @media print {
+            body {
+                background-color: white !important;
+                color: black !important;
+            }
+            
             .markdown-body {
-                max-width: 100%;
-                padding: 20px;
+                max-width: 100% !important;
+                padding: 20px !important;
+                background-color: white !important;
+                color: black !important;
             }
             
-            h1, h2 {
-                page-break-after: avoid;
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                page-break-inside: avoid !important;
+                color: black !important;
             }
             
-            ul {
-                page-break-inside: avoid;
+            ul, ol {
+                page-break-inside: avoid !important;
             }
             
             li {
-                page-break-inside: avoid;
+                page-break-inside: avoid !important;
+            }
+            
+            section, div {
+                page-break-inside: avoid !important;
+            }
+            
+            /* Ensure all text is visible */
+            * {
+                color: black !important;
+                background-color: transparent !important;
+            }
+            
+            a {
+                color: #0366d6 !important;
+                text-decoration: underline !important;
             }
         }
 
@@ -752,7 +776,7 @@
         <li><i class="fas fa-phone"></i> Phone: +91 99164 29983</li>
         <li><i class="fas fa-envelope"></i> Email: <a href="mailto:surendraelectronics@gmail.com">surendraelectronics@gmail.com</a></li>
         <li><i class="fas fa-map-marker-alt"></i> Location: Bangalore, India</li>
-        <li><i class="fas fa-globe"></i> Website: <a href="https://surendraresume.netlify.app/">surendraresume.netlify.app</a></li>
+        <li><i class="fas fa-globe"></i> Website: <a href="https://surendraresume.netlify.app/">surendraresume.netlify.app</a> | <a href="https://surendraredd.github.io/surendraresumelatest/">surendraredd.github.io/surendraresumelatest</a></li>
         <li><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/surendra-reddy-55208948/">https://www.linkedin.com/in/surendra-reddy-55208948/</a></li>
         <li><i class="fab fa-github"></i> GitHub: <a href="https://github.com/SurendraRedd">https://github.com/SurendraRedd</a></li>
         </ul>
@@ -960,6 +984,7 @@
                         <li><a href="tel:+919916429983"><i class="fas fa-phone"></i> +91 99164 29983</a></li>
                         <li><a href="mailto:surendraelectronics@gmail.com"><i class="fas fa-envelope"></i> surendraelectronics@gmail.com</a></li>
                         <li><a href="https://surendraresume.netlify.app/" target="_blank"><i class="fas fa-globe"></i> surendraresume.netlify.app</a></li>
+                        <li><a href="https://surendraredd.github.io/surendraresumelatest/" target="_blank"><i class="fas fa-globe"></i> surendraredd.github.io/surendraresumelatest</a></li>
                         <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
                     </ul>
                 </div>
@@ -1484,51 +1509,57 @@
             }
         })();
 
-        // PDF Download Functionality
+        // PDF Download Functionality - Using Browser Print
         function downloadPDF() {
             const button = document.querySelector('.download-btn');
             const originalText = button.innerHTML;
             
-            // Show loading state
+            // Option 1: Use browser's native print dialog (recommended)
+            if (confirm('Click OK to use browser print (recommended for complete content), or Cancel to try library-based PDF generation.')) {
+                window.print();
+                return;
+            }
+            
+            // Option 2: Library-based PDF generation
             button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
             button.disabled = true;
             
             const element = document.getElementById('resume-content');
+            
             const opt = {
-                margin: [8, 8, 8, 8],
+                margin: [5, 5, 5, 5],
                 filename: 'Surendra_Reddy_Resume.pdf',
-                image: { type: 'jpeg', quality: 0.95 },
+                image: { type: 'jpeg', quality: 1 },
                 html2canvas: { 
-                    scale: 2,
+                    scale: 1.5,
                     useCORS: true,
                     letterRendering: true,
-                    logging: false,
+                    logging: true,
                     scrollY: 0,
                     scrollX: 0,
-                    windowWidth: 1200
+                    allowTaint: true,
+                    backgroundColor: '#ffffff'
                 },
                 jsPDF: { 
                     unit: 'mm', 
                     format: 'a4', 
                     orientation: 'portrait',
-                    compress: true
+                    putOnlyUsedFonts: true
                 },
                 pagebreak: { 
-                    mode: ['avoid-all', 'css', 'legacy'],
-                    before: '.pdf-page-break',
-                    avoid: ['h1', 'h2', 'li', 'ul']
+                    mode: ['avoid-all', 'css'],
+                    after: '.pdf-page-break'
                 }
             };
             
             html2pdf().set(opt).from(element).save().then(() => {
-                // Restore button state
                 button.innerHTML = originalText;
                 button.disabled = false;
             }).catch((error) => {
                 console.error('PDF generation error:', error);
                 button.innerHTML = originalText;
                 button.disabled = false;
-                alert('Error generating PDF. Please try again.');
+                alert('Error generating PDF. Please use browser print instead (Ctrl+P or Cmd+P).');
             });
         }
     </script>
